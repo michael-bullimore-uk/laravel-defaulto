@@ -3,6 +3,11 @@
 ## About
 An opinionated Laravel package that...
 
+## Features
+- Secure config by default
+    - ...
+- Immutable dates
+
 ## TODO
 - Is there a way to enforce install of the Roave Security Advisories package as a dev dependency?
 
