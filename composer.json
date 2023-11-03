@@ -1,0 +1,59 @@
+{
+    "name": "mibu/laravel-defaulto",
+    "description": "",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "defaulto"
+    ],
+    "authors": [
+        {
+            "name": "Michael Bullimore",
+            "homepage": "https://github.com/michael-bullimore-uk"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "MIBU\\Defaulto\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MIBU\\Defaulto\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MIBU\\Defaulto\\DefaultoServiceProvider"
+            ]
+        }
+    },
+    "require" : {
+        "illuminate/contracts": "^10.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "fakerphp/faker": "^1.21",
+        "phpstan/phpstan": "^1.9",
+        "friendsofphp/php-cs-fixer": "^3.13",
+        "phpstan/phpstan-strict-rules": "^1.4",
+        "orchestra/testbench": "^8.13"
+    },
+    "scripts": {
+        "_post-install-cmd": [
+            "composer require --dev roave/security-advisories:dev-latest"
+        ],
+        "all": [
+            "@cs",
+            "@analyse",
+            "@test"
+        ],
+        "analyse": "vendor/bin/phpstan analyse -c phpstan.neon.dist",
+        "cs": "vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php --using-cache=no --allow-risky=yes",
+        "test": "vendor/bin/phpunit --order-by=random"
+    },
+    "_suggest": {
+        "roave/security-advisories": "Foo bar baz."
+    }
+}
