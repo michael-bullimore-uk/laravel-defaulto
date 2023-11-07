@@ -14,5 +14,7 @@ return [
             'secure' => env('SESSION_SECURE_COOKIE', true),
         ],
     ],
+    'eloquent_relation_req_morph_map' => env('DEFAULTO_ELOQUENT_RELATION_REQ_MORPH_MAP', true),
+    'eloquent_strict_mode' => env('DEFAULTO_ELOQUENT_STRICT_MODE', true),
     'immutable_dates' => env('DEFAULTO_IMMUTABLE_DATES', true),
 ];

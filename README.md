@@ -1,11 +1,18 @@
-![Laravel Defaulto](art/logo.png)
+![Laravel Defaulto](art/logo.svg)
 
 ## About
-An opinionated Laravel package that...
+A package that overrides the default Laravel configuration with secure defaults, plus some opinionated boilerplate (that can be disabled).
 
 ## Features
 - Secure config by default
-    - ...
+    - Increased bcrypt hashing cost
+    - Encrypted session data
+    - Expire cookies on browser close
+    - Prevent CSR cookies
+    - HTTPS only cookies
+- Eloquent
+  - Req. morph map
+  - Strict mode
 - Immutable dates
 
 ## TODO
@@ -16,6 +23,8 @@ An opinionated Laravel package that...
 
 ###  Installation
 //
+
+Please do not blindly use this package in production without thoroughly testing the implementation.
 
 ## Security
 Please do not report security related issues publicly.

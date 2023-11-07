@@ -6,6 +6,8 @@ namespace MIBU\Defaulto;
 
 use Carbon\CarbonImmutable;
 use Illuminate\Contracts\Foundation\CachesConfiguration;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\ServiceProvider;
@@ -27,9 +29,15 @@ class DefaultoServiceProvider extends ServiceProvider
             ], 'defaulto-config');
         }
 
+        if (config('defaulto.eloquent_strict_mode')) {
+            Model::shouldBeStrict(!$this->app->isProduction());
+        }
+
         if (config('defaulto.immutable_dates')) {
             Date::use(CarbonImmutable::class);
         }
+
+        Relation::requireMorphMap(config('defaulto.eloquent_relation_req_morph_map'));
     }
 
     private function overrideConfigIfNotCached()
