@@ -1,5 +1,7 @@
 ![Laravel Defaulto](art/logo.svg)
 
+This is WIP, please do not use in production.
+
 ## About
 A package that overrides the default Laravel configuration with secure defaults, plus some opinionated boilerplate (that can be disabled).
 
@@ -10,6 +12,7 @@ A package that overrides the default Laravel configuration with secure defaults,
     - Expire cookies on browser close
     - Prevent CSR cookies
     - HTTPS only cookies
+    - ...
 - Eloquent
   - Req. morph map
   - Strict mode
@@ -17,6 +20,7 @@ A package that overrides the default Laravel configuration with secure defaults,
 
 ## TODO
 - Is there a way to enforce install of the Roave Security Advisories package as a dev dependency?
+- Tests, tests, tests.
 
 ## Documentation
 //
